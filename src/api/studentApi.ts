@@ -1,5 +1,5 @@
 import API_BASE_URL from '@config/apiConfig';
-import type { Student } from '@interfaces/student';
+import type { ApiStudent, Student } from '@interfaces/student';
 import axios from 'axios';
 
 const STUDENT_API_URL = `${API_BASE_URL}/students`;
@@ -7,7 +7,7 @@ const STUDENT_API_URL = `${API_BASE_URL}/students`;
 export const fetchStudents = async (): Promise<Student[]> => {
   try {
     const response = await axios.get(STUDENT_API_URL);
-    const newStudents = response.data.map((student) => ({
+    const newStudents = response.data.map((student: ApiStudent) => ({
       ...student,
       id: student._id, // Map _id to id
     }));

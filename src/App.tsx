@@ -1,6 +1,7 @@
 import TrackerContainer from '@containers/tracker-container';
 import './App.css';
-import { Provider } from 'react-redux';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// import { Provider } from 'react-redux';
 
 function App() {
   return (
